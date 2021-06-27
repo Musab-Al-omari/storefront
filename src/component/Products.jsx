@@ -101,21 +101,20 @@ function Album(props) {
           {/* End hero unit */}
           <Grid container spacing={4}>
 
-            {props.counter.listOfProducts.map((prodect,idx) => (
+            {props.Cata.listOfProducts.map((prodect,idx) => (
               <Grid item key={idx} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
+                    image={prodect.imgUrl}
+                    title={"Image title"}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                    {prodect.name}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
+                    {prodect.description}
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -140,7 +139,7 @@ function Album(props) {
 
 //1.map it 
 const mapStateToProps = state => ({
-    counter: state.lists
+  Cata: state.Cata
 });
 //2.connect it 
-export default connect(mapStateToProps)(Total);
+export default connect(mapStateToProps)(Album);
