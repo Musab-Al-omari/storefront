@@ -1,14 +1,22 @@
 import React from 'react';
-import Album from './component/Album';
+import Products from './component/Products';
+import Footer from './component/Footer'
+import Header from './component/Header'
+import Categories from './component/Categories'
 
 
-function App() {
+function App(props) {
 
 
     return (
-       <Album />
-      );
-    
+        <React.Fragment>
+            <Header />
+            <Categories/>
+            <Products />
+            <Footer/>
+        </React.Fragment>
+    );
+
 }
 
 export default App;
