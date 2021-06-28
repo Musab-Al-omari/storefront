@@ -13,6 +13,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import {connect} from 'react-redux';
+import { increment }from '../store/Actions'
+import {useDispatch} from 'react-redux'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -53,6 +55,8 @@ const useStyles = makeStyles((theme) => ({
 // const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function Album(props) {
+  const dispatch= useDispatch()
+
   const classes = useStyles();
 
   return (
@@ -118,8 +122,8 @@ function Album(props) {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      View
+                    <Button size="small" color="primary" onClick={() => dispatch(increment(prodect))}>
+                      Add To Chart
                     </Button>
                     <Button size="small" color="primary">
                       Edit

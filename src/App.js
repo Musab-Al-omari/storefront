@@ -9,12 +9,14 @@ function App(props) {
 
 
     return (
+
         <React.Fragment>
             <Header />
             <Categories/>
-            <Products />
+            <Products/>
             <Footer/>
         </React.Fragment>
+        
     );
 
 }
