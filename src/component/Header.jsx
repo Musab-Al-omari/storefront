@@ -1,11 +1,11 @@
 import Typography from "@material-ui/core/Typography";
 // import Link from "@material-ui/core/Link";
+import SimpleCart from './SimpleCart'
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import StoreMallDirectoryIcon from "@material-ui/icons/StoreMallDirectory";
-
-
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -42,22 +42,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 export default function Album() {
   const classes = useStyles();
-
+  const counter=useSelector(state=>state.Chart.counter)
 
   return (
     <AppBar position="relative">
-    <Toolbar>
-      <StoreMallDirectoryIcon className={classes.icon} />
-      <Typography variant="h6" color="inherit" noWrap>
-        Mus'ab-Store
-      </Typography>
-      <div id="headerDiv">
-        <h2>chart(0)</h2>
-      </div>
-    </Toolbar>
-  </AppBar>
+      <Toolbar>
+        <StoreMallDirectoryIcon className={classes.icon} />
+        <Typography variant="h6" color="inherit" noWrap>
+          Mus'ab-Store
+        </Typography>
+        <div id="headerDiv">
+          <h2>chart({counter})</h2>
+        </div>
+        <SimpleCart />
+      </Toolbar>
+    </AppBar>
   );
 }

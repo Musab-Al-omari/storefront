@@ -1,5 +1,5 @@
 // import Link from "@material-ui/core/Link";
-import { electro,  reset } from "../store/Cata";
+import { electro,  reset } from "../store/Actions";
 import { connect } from "react-redux";
 
  function Categories(props) {

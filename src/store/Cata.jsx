@@ -35,9 +35,10 @@ let initialState = {
     },
   ],
 };
+
+
 export default (state = initialState, action) => {
-  // let {payload} = action;
-    // console.log('action',action);
+  
   switch (action.type) {
     case "Electro":
       // eslint-disable-next-line array-callback-return
@@ -64,16 +65,3 @@ export default (state = initialState, action) => {
   }
 };
 
-
-export const electro = (name) => {
- 
-    return {
-        type: name
-    }
-}
-
-export const reset = () => {
-    return {
-        type: 'RESET'
-    }
-}
