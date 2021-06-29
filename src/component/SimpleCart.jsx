@@ -4,9 +4,7 @@ import { useSelector } from "react-redux";
 export default () => {
   const obj = useSelector((state) => state.Chart);
 
- let newArray= obj.arrayOfItem.map((obj) => {
-    return obj.name
-  });
+
 
   if (obj.arrayOfItem.length === 0) {
     return null;
@@ -14,9 +12,10 @@ export default () => {
     console.log("ggggggggg");
     return (
       <ul id="list">
-        {newArray.map((name) => {
-          <li>{name}</li>;
-        })}
+         {obj.arrayOfItem.map((obj) => {
+           return(<li>{obj.name}</li>)
+         })}
+  
       </ul>
     );
   }
